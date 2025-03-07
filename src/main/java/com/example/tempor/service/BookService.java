@@ -13,18 +13,23 @@ public class BookService {
     @Autowired
     BookRepo bookRepo;
 
+
+
     public Book createBook(Book book){
+
         return bookRepo.save(book);
     }
     public List<Book> getAllBooks(){
         return (List<Book>)bookRepo.findAll();
     }
     public Book getBook(int id){
-        return bookRepo.findById((Integer)id).get();
+
+        return bookRepo.findById((Integer)id).orElse(null);
+
     }
     public Book deleteBook(int id){
 
-        Book deletedBook=bookRepo.findById((Integer)id).get();
+        Book deletedBook=bookRepo.findById((Integer)id).orElse(null);
         bookRepo.deleteById((Integer)id);
         return deletedBook;
     }

@@ -1,14 +1,12 @@
 package com.example.tempor.dao;
 
-import com.example.tempor.entity.Book;
+import com.example.tempor.entity.Publisher;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
-public interface BookRepo extends CrudRepository<Book,Integer> {
+public interface PublisherRepo extends CrudRepository <Publisher,Integer>{
 
 }
